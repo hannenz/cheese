@@ -1,0 +1,754 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"previ",
+				"previewImage"
+			],
+			[
+				"imagecreate",
+				"imagecreatefrompng"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"countr",
+				"countryRepository"
+			],
+			[
+				"count",
+				"countryRepository"
+			],
+			[
+				"foreig",
+				"foreign_table"
+			],
+			[
+				"ATag",
+				"ATagParams"
+			],
+			[
+				"body",
+				"bodyTagCObject"
+			],
+			[
+				"fil",
+				"filterLanguage"
+			],
+			[
+				"filter",
+				"filterSearchTerm"
+			],
+			[
+				"downl",
+				"downloadRepository"
+			],
+			[
+				"referec",
+				"referenceDate"
+			],
+			[
+				"refer",
+				"referenceDate"
+			],
+			[
+				"thera",
+				"theraTrainerLocation"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"back",
+				"backendUser"
+			],
+			[
+				"direct",
+				"directoryPattern"
+			],
+			[
+				"accordeon",
+				"accordeon-entry"
+			],
+			[
+				"list-sty",
+				"list-style-type: "
+			],
+			[
+				"sec",
+				"secnavWidth"
+			],
+			[
+				"userG",
+				"userGroupId"
+			],
+			[
+				"get_de",
+				"get_defined_vars"
+			],
+			[
+				"defined",
+				"get_defined_constants"
+			],
+			[
+				"shop_",
+				"shop_role_priority"
+			],
+			[
+				"shop_role_constant",
+				"shop_role_constant_value"
+			],
+			[
+				"ROLE_",
+				"ROLE_RELEASER"
+			],
+			[
+				"findAll",
+				"findAllByParentId"
+			],
+			[
+				"profile",
+				"profileData"
+			],
+			[
+				"valida",
+				"validationErrors"
+			],
+			[
+				"error",
+				"error-message"
+			],
+			[
+				"product",
+				"productId"
+			],
+			[
+				"product-",
+				"product-types-list"
+			],
+			[
+				"tmp",
+				"tmp_name"
+			],
+			[
+				"base64",
+				"base64_encode"
+			],
+			[
+				"D",
+				"D9E0E9"
+			],
+			[
+				"create",
+				"createShopLink"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"HEADER",
+				"HEADER_HEIGHT_IN_MM"
+			],
+			[
+				"Trade",
+				"TradeGothicLTStd-Bd2"
+			],
+			[
+				"html",
+				"htmlentities"
+			],
+			[
+				"actionOr",
+				"actionOrderConfirm"
+			],
+			[
+				"catego",
+				"Category"
+			],
+			[
+				"templa",
+				"templatesPath"
+			],
+			[
+				"categor",
+				"categoryID"
+			],
+			[
+				"cat",
+				"categoryID"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 102.0,
+		"last_filter": "menu",
+		"selected_items":
+		[
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ref",
+				"Project: Refresh Folders"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/var/www/html/cheese"
+	],
+	"file_history":
+	[
+		"/var/www/html/fototest/css/main.css",
+		"/var/www/html/fototest/sass/main.css",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/js/src/main.js",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials/_dce.scss",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials/_tabs.scss",
+		"/var/www/html/thera-trainer/typo3conf/ext/static_info_tables/Classes/Hook/Backend/Form/ElementRenderingHelper.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/Classes/Domain/Model/Fair.php",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials/_tt_fairs.scss",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/main.scss",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/Configuration/TCA/Fair.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/ext_tables.sql",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_news/Classes/Domain/Model/Post.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_news/Classes/Controller/PostController.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/Resources/Private/Language/locallang_db.xlf",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/Resources/Private/Language/locallang_csh_tx_ttfairs_domain_model_fair.xlf",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/Resources/Private/Language/de.locallang_db.xlf",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/Configuration/FlexForms/flexform_ttfairs.xml",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/Classes/Domain/Repository/FairRepository.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/heroslider/ext_tables.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/Resources/Private/Language/locallang.xlf",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/ext_tables.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/Classes/Controller/FairController.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Classes/Controller/DownloadController.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/Resources/Private/Templates/Fair/List.html",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/ext_localconf.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/heroslider/ext_localconf.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_news/ext_localconf.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_news/Configuration/FlexForms/flexform_ttnewsfe.xml",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_news/ext_tables.sql",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/ext_emconf.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_fairs/Configuration/FlexForms/flexform_ttteaserfe.xml",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_news/Resources/Private/Language/de.locallang.xlf",
+		"/var/www/html/thera-trainer/typo3conf/ext/tt_news/Classes/Domain/Repository/PostRepository.php",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/dce/teasers.html",
+		"/home/hannenz/.cache/.fr-KAnTBF/style.css",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials/_typography.scss",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/partials/footer.html",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/_settings.scss",
+		"/var/www/html/thera-trainer/typo3/sysext/cms/tslib/templates/tslib_page_frontend.html",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/layouts/downloads.html",
+		"/var/www/html/thera-trainer/soap_service.wsdl",
+		"/var/www/html/thera-trainer/soap_service.local.wsdl",
+		"/var/www/html/soapclient/index.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/ext_tables.sql",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Classes/Controller/SoapService.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Resources/Private/Templates/Download/Show.html",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Resources/Private/Language/locallang.xlf",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Resources/Private/Language/de.locallang.xlf",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Resources/Private/Language/locallang_csh_tx_halmathera_domain_model_download.xlf",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Resources/Private/Partials/Download/Properties.html",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Resources/Private/Templates/Download/List.html",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Classes/Domain/Model/Download.php",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/ts/downloads.ts",
+		"/var/www/html/thera-trainer/fileadmin/__template/ts/setup.ts",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Resources/Private/Partials/Download/FormFields.html",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Configuration/TCA/Download.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Resources/Private/Language/locallang_db.xlf",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/layouts/anfahrt.html",
+		"/home/hannenz/smbtom/htdocs/zimmermann-stalltechnik/js/src/map.js",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/js/map.js",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/ts/map.ts",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/partials/header.html",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/ts/home.ts",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/ts/constants.ts",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/layouts/home.html",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials/_navigation.scss",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/ts/setup.ts",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/rte.css",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials/_rte.css",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/ts/rootTSconfig.ts",
+		"/home/hannenz/smbtom/htdocs/soapclient/index.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/Configuration/FlexForms/flexform_theradownloadsfe.xml",
+		"/var/www/html/thera-trainer/typo3conf/ext/halma_thera/ext_localconf.php",
+		"/var/www/html/thera-trainer/sftp-config.json",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/_colors.scss",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/dce/accordeon.html",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/dce/product_teasers.html",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/dce/heroslider.html",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials/_shame.scss",
+		"/home/hannenz/smbtom/htdocs/pager/phpincludes/users/classes/class_usersbasecontroller.inc",
+		"/var/www/html/thera-trainer/typo3conf/ext/image_autoresize/Classes/Service/ImageResizer.php",
+		"/mnt/jobs/Jobs_2013/Medica/MEDI_13017_Homepage_Relaunch/DV/Infos vom Kunde/2015_Texte/PA_02_WemHilf/Patient_WemHilft_10_Produktempfehlung_balo_parkinson.txt",
+		"/mnt/jobs/Jobs_2013/Medica/MEDI_13017_Homepage_Relaunch/DV/Infos vom Kunde/2015_Texte/PA_02_WemHilf/Patient_WemHilft_09_Produktempfehlung_tigo_parkinson.txt",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/Makefile",
+		"/var/www/html/thera-trainer/typo3conf/ext/theraproducts/Classes/Domain/Repository/PositionRepository.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/theraproducts/Classes/Domain/Model/Position.php",
+		"/var/www/html/thera-trainer/typo3conf/extTables.php",
+		"/var/www/html/thera-trainer/typo3conf/LocalConfiguration.php",
+		"/var/www/html/thera-trainer/fileadmin/template/layouts/page.html",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/layouts/page.html",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/layouts/newsletter.html",
+		"//mnt/jobs/Jobs_2013/Medica/MEDI_13017_Homepage_Relaunch/DV/Infos vom Kunde/2015_Texte/PA_02_WemHilf/Patient_WemHilft_14_Schaedel-Hirn.txt",
+		"//mnt/jobs/Jobs_2013/Medica/MEDI_13017_Homepage_Relaunch/DV/Infos vom Kunde/2015_Texte/PA_02_WemHilf/Patient_WemHilft_09_Parkinson.txt",
+		"//mnt/jobs/Jobs_2013/Medica/MEDI_13017_Homepage_Relaunch/DV/Infos vom Kunde/2015_Texte/PA_02_WemHilf/Patient_WemHilft_06_Schlaganfall.txt",
+		"//mnt/jobs/Jobs_2013/Medica/MEDI_13017_Homepage_Relaunch/DV/Infos vom Kunde/2015_Texte/PA_02_WemHilf/Patient_WemHilft_03_MultipleSklerose.txt",
+		"/home/hannenz/unicode-chars.html",
+		"/home/hannenz/unicode-chars.css",
+		"//mnt/jobs/Jobs_2013/Medica/MEDI_13017_Homepage_Relaunch/DV/Infos vom Kunde/2015_Texte/PA_01_Startseite/Patient_02_Startseite_Teaser.txt",
+		"//mnt/jobs/Jobs_2013/Medica/MEDI_13017_Homepage_Relaunch/DV/Infos vom Kunde/2015_Texte/PA_04_HaeufigGestellteFragen/Patient_HaefigGestellteFragen.txt",
+		"//mnt/jobs/Jobs_2013/Medica/MEDI_13017_Homepage_Relaunch/DV/Infos vom Kunde/2015_Texte/PA_02_WemHilf/Patient_WemHilft_01_Startseite.txt",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/js/vendor/ftellipsis.min.js",
+		"//mnt/jobs/Jobs_2013/Medica/MEDI_13017_Homepage_Relaunch/DV/Infos vom Kunde/2015_Texte/PA_01_Startseite/Patient_01_Startseite.txt",
+		"/home/hannenz/.cache/.fr-94Vqz1/pager.tom.2015-05-12-1532.sql",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/css/main.css",
+		"/home/hannenz/.cache/.fr-dmLX0s/css-ellipses/multiline-ellipsis.scss",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials/_heroslider.scss",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials/_iconfont.scss",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials/_layout.scss",
+		"/var/www/html/thera-trainer/fileadmin/template/layouts/page_no_annotations.html",
+		"/var/www/html/thera-trainer/fileadmin/template/layouts/print.html",
+		"/var/www/html/thera-trainer/fileadmin/template/layouts/products.html",
+		"/var/www/html/thera-trainer/fileadmin/template/layouts/home.html",
+		"/var/www/html/thera-trainer/fileadmin/template/sass/partials/_products.scss",
+		"/var/www/html/thera-trainer/typo3conf/ext/theraproducts/ext_localconf.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/theraproducts/Configuration/FlexForms/flexform_theraproductsfe.xml",
+		"/var/www/html/thera-trainer/typo3conf/ext/theraproducts/Classes/Controller/ProductController.php",
+		"/var/www/html/thera-trainer/typo3conf/ext/theraproducts/ext_emconf.php",
+		"/tmp/fz3temp-1/.htaccess",
+		"/var/www/html/thera-trainer/fileadmin/rd2015/js/main.js",
+		"/home/hannenz/mobile_infogfx.svg",
+		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/ts/constants.ts",
+		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/partials/_typography.scss",
+		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/main.scss",
+		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/_colors.scss",
+		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/_settings.scss",
+		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/partials/_heroslider.scss",
+		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/partials/_layout.scss",
+		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/partials/_navigation.scss"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials",
+			"/var/www/html/thera-trainer/typo3conf/ext/halma_thera",
+			"/var/www/html/thera-trainer/fileadmin/rd2015",
+			"/var/www/html/thera-trainer/fileadmin/rd2015/sass/partials",
+			"/var/www/html/thera-trainer/fileadmin/rd2015/js",
+			"/var/www/html/thera-trainer/fileadmin/rd2015/sass",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"__title",
+			"annot",
+			"light",
+			"grey",
+			"subtle",
+			"orange",
+			"home",
+			"block",
+			"green",
+			".pro-section {\n	.tabs {\n		label {\n			background-color:$light-green;\n			color:$text-color;\n			&::before {\n				@include slant_triangle_pseudo_element($light-green, left);\n			}\n		}\n		/* IE7 + 8 */\n		#tab0[aria-selcetd] ~ .labels #tab0-label,\n		#tab1[aria-selcetd] ~ .labels #tab1-label,\n		#tab2[aria-selcetd] ~ .labels #tab2-label,\n		#tab3[aria-selcetd] ~ .labels #tab3-label,\n		#tab4[aria-selcetd] ~ .labels #tab4-label,\n		/* Real browsers */\n		#tab0:checked ~ .labels #tab0-label,\n		#tab1:checked ~ .labels #tab1-label,\n		#tab2:checked ~ .labels #tab2-label,\n		#tab3:checked ~ .labels #tab3-label,\n		#tab4:checked ~ .labels #tab4-label,\n		{\n			background-color:$green;\n			color:$text-color;\n			&::before {\n				@include slant_triangle_pseudo_element($green, left);\n			}\n\n		}\n	}\n}\n",
+			"subtle",
+			"light",
+			"1",
+			".tabs",
+			"_tabs",
+			"html",
+			"annotation",
+			"\\SJBR\\StaticInfoTables\\Domain\\Repository\\CountryRepository",
+			"countryRepository",
+			"\\Domain\\Repository",
+			"itemsProcFunc",
+			":checked",
+			"with=",
+			"input",
+			"text",
+			"_de",
+			"</f:link.action>",
+			"h5",
+			"time()",
+			"country",
+			"date_end",
+			"date_begin",
+			"						\\TYPO3\\CMS\\Core\\Resource\\File::FILETYPE_TEXT => array(\n							'showitem' => '--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,--palette--;;filePalette'\n						),\n",
+			" --palette--;;filePalette",
+			"TYPOO3",
+			"image",
+			"'showitem' => '--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette'",
+			"'showitem' => '--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --",
+			"'showitem' => '--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;",
+			"'showitem' => '--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette'",
+			"'showitem' => '--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette",
+			"'showitem' => '--palette--;LLL:EXT:lang/locallang_tca.xlf",
+			"'showitem' => '--palette--;LLL:EXT",
+			"'showitem' =>",
+			"String",
+			"tx_ttfairs_domain_model_fairs",
+			"end",
+			"LLL:EXT:tt_fairs/Resources/Private/Language/locallang_db.xlf:tx_ttfairs_domain_model_fairs",
+			"LLL:EXT:tt_fairs/Resources/Private/Language/locallang_db",
+			"LLL:EXT",
+			"LLL:EXT;tt_fairs/Resources",
+			"LLL:EXT;tt_fairs/Resources/Private/Language/locallang_db.xlf:tx_ttfairs_domain_model_fairs.",
+			"'LLL:EXT;tt_fairs/Resources/Private/Language/locallang_db.xlf:tx_fairs_domain_model_fairs",
+			"link",
+			"teaser",
+			"Teaser",
+			"teaser",
+			"tx_ttteaser_domain_model_teaser",
+			"teaser",
+			"tt_teaser",
+			"tx_ttteaser",
+			"tt-teaser",
+			"ttteaser",
+			"teaser",
+			"Fairs",
+			"Country",
+			"country",
+			"Country",
+			"country",
+			"Country",
+			"country",
+			"Country",
+			"country",
+			"end",
+			"Country",
+			"country",
+			"Country",
+			"country",
+			"begin",
+			"Begin",
+			"begin",
+			"Begin",
+			"begin",
+			"teasers",
+			"teaser",
+			"Teaser",
+			"teaser",
+			"ttteaser",
+			"ttteaserfe",
+			"ttteaser",
+			"+ 0.1em",
+			"accorde",
+			"fonts/",
+			"fonts",
+			"languag",
+			"teaser",
+			"green",
+			"quick-access",
+			"quick",
+			".claim",
+			"include",
+			"header",
+			"favicon",
+			"viewport",
+			"titleTag",
+			".primary-nav, .secondary-nav",
+			"header",
+			"translateX(0) translate3d",
+			"mobile-nav",
+			".secondary-nav",
+			"menu",
+			"mobile-nav",
+			"mobile",
+			"h1",
+			"query",
+			"{$filepaths.template}layouts/page.html",
+			"category",
+			"language",
+			"$language",
+			"language",
+			"caterory",
+			"description",
+			"filename",
+			"title",
+			"string",
+			"language",
+			"home.html",
+			"= #"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"shop_role_priority",
+			"shop_role_name",
+			"'fa-"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 112.0
+	},
+	"output.sftp":
+	{
+		"height": 107.0
+	},
+	"output.xdebug":
+	{
+		"height": 102.0
+	},
+	"pinned_build_system": "",
+	"project": "cheese.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"setup.",
+				"fileadmin/__template/ts/setup.ts"
+			],
+			[
+				"layo",
+				"fileadmin/rd2015/sass/partials/_layout.scss"
+			],
+			[
+				"mailbo",
+				"templates/notification/mailbody.tpl"
+			],
+			[
+				"tests",
+				"~/tests/pager/tests.js"
+			],
+			[
+				"dbcex",
+				"as/classes/class_dbcex.php"
+			],
+			[
+				"edit",
+				"templates/users/edit.tpl"
+			],
+			[
+				"contact",
+				"fileadmin/template/sass/partials/_contact_form.scss"
+			],
+			[
+				"lang.",
+				"fileadmin/contactform/lang/lang.xml"
+			],
+			[
+				"setup",
+				"fileadmin/template/ts/setup.ts"
+			],
+			[
+				"prod",
+				"fileadmin/template/ts/product_detail.ts"
+			],
+			[
+				"products.",
+				"fileadmin/template/layouts/products.html"
+			],
+			[
+				"",
+				"typo3conf/ext/theraproducts/Resources/Private/Language/de.locallang_db.xlf"
+			],
+			[
+				"arguments",
+				"typo3_src-6.2.4/typo3/sysext/extbase/Classes/Mvc/Controller/Arguments.php"
+			],
+			[
+				"argument",
+				"typo3_src-6.1.5/sysext/extbase/Classes/Mvc/Controller/Argument.php"
+			],
+			[
+				"list.html",
+				"typo3conf/ext/theraproducts/Resources/Private/Templates/Product/List.html"
+			],
+			[
+				"productc",
+				"typo3conf/ext/theraproducts/Classes/Controller/ProductController.php"
+			],
+			[
+				"class_cart",
+				"phpincludes/shop/classes/class_cart.inc"
+			],
+			[
+				"shop",
+				"phpincludes/shop/shop.inc"
+			],
+			[
+				"pager_s",
+				"templates/shop/css/pager_style.css"
+			],
+			[
+				"price",
+				"phpincludes/shop/classes/class_price.inc"
+			],
+			[
+				"css",
+				"as/templates/default/app_showtable/css/cmt_showtable_style.css"
+			],
+			[
+				"class_ca",
+				"phpincludes/shop/classes/class_cart.inc"
+			],
+			[
+				"cart.in",
+				"phpincludes/shop/classes/class_cart.inc"
+			],
+			[
+				"succ",
+				"templates/shop/order/success.tpl"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 701.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 364.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
