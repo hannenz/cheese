@@ -100,6 +100,21 @@ class Cheese {
 				// session_destory();
 				break;
 
+			case 'save_picture':
+				if (!empty($this->Request->data['imageData'])) {
+
+					$im = imagecreatefromstring(base64_decode(substr($this->Request->data['imageData'], 22)));
+					if ($im === false) {
+						$this->Response->setError('imagecreatefromstring() failed');
+					}
+					else {
+						imagejpeg($im, __DIR__ . DIRECTORY_SEPARATOR . 'pictures' . DIRECTORY_SEPARATOR . uniqid() . '.jpg');
+						imagedestroy($im);
+					}
+				}
+				break;
+
+
 			// case 'startvideostream':
 			// 	$this->Camera->startVideoStream();
 			// 	break;

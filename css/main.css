@@ -1,4 +1,5 @@
 @import url("http://fonts.googleapis.com/css?family=Lato");
+@import url("http://fonts.googleapis.com/css?family=Bowlby+One+SC");
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -21,7 +22,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.9);
   display: none;
 }
 
@@ -35,6 +36,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 80%;
+}
+
+#video {
+  width: 854px;
+  height: 480px;
 }
 
 h1 {
@@ -60,11 +66,6 @@ h1 span {
   max-width: 1024px;
   margin: 0 auto;
   text-align: center;
-}
-
-#videoCanvas {
-  width: 854px;
-  height: 480px;
 }
 
 .button {
@@ -101,19 +102,36 @@ h1 span {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 1440px;
-  display: none;
-  transform: translate(0, 0);
+  width: 854px;
+  height: 480px;
+  display: block;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
 }
 
 .countdown > div {
-  width: 100%;
+  width: 854px;
   height: 480px;
+  font-family: 'Bowlby One SC';
   font-size: 160px;
   text-align: center;
   line-height: 480px;
   color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.countdown > div:nth-child(1) {
+  transform: translateZ(1500px);
+}
+
+.countdown > div:nth-child(2) {
+  transform: translateZ(1500px);
+}
+
+.countdown > div:nth-child(3) {
+  transform: translateZ(1500px);
 }
 
 .countdown.is-active {
@@ -121,21 +139,50 @@ h1 span {
   animation: countdown 3s;
 }
 
+.countdown.is-active > div:nth-child(1) {
+  animation: fly 6s ease-in;
+  animation-fill-mode: forward;
+}
+
+.countdown.is-active > div:nth-child(2) {
+  animation: fly 6s ease-in;
+  animation-delay: 1s;
+  animation-fill-mode: forward;
+}
+
+.countdown.is-active > div:nth-child(3) {
+  animation: fly 6s ease-in;
+  animation-delay: 2s;
+  animation-fill-mode: forward;
+}
+
 .owl-carousel {
   margin: 3em 0;
 }
 
+@keyframes fly {
+  from {
+    transform: translateZ(1500px);
+    opacity: 1;
+  }
+  to {
+    transform: translateZ(-999999px);
+    opacity: 0;
+  }
+}
+
 @keyframes countdown {
-  0% {
-    transform: translate(0, 0);
+  0 {
+    background-color: rgba(255, 255, 255, 0);
   }
-  33.33% {
-    transform: translate(0, 0);
+  90% {
+    background-color: rgba(255, 255, 255, 0);
   }
-  66.66% {
-    transform: translate(0, -480px);
+  91% {
+    background-color: white;
   }
   100% {
-    transform: translate(0, -960px);
+    background-color: rgba(255, 255, 255, 0);
+    transform: translateZ(0, 0, 5000px);
   }
 }

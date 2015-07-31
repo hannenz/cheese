@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"anima",
+				"animation-fill-mode: "
+			],
+			[
+				"perspective",
+				"perspective-origin: "
+			],
+			[
 				"vide",
 				"videoStreamPID"
 			],
@@ -249,6 +257,7 @@
 	},
 	"file_history":
 	[
+		"/var/www/html/cheese/css/main.css",
 		"/var/www/html/cheese/js/assets/owl.carousel.css",
 		"/home/hannenz/jsmpeg/stream-example.html",
 		"/var/www/html/fototest/css/main.css",
@@ -375,8 +384,7 @@
 		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/partials/_typography.scss",
 		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/main.scss",
 		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/_colors.scss",
-		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/_settings.scss",
-		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/partials/_heroslider.scss"
+		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/_settings.scss"
 	],
 	"find":
 	{
@@ -401,6 +409,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"			z-index:",
+			"			background-color",
+			"'image'",
+			"image",
+			"ribbonImg",
+			"canvas",
+			"video",
 			"600px",
 			"600",
 			"800",
@@ -521,14 +536,7 @@
 			"menu",
 			"mobile-nav",
 			"mobile",
-			"h1",
-			"query",
-			"{$filepaths.template}layouts/page.html",
-			"category",
-			"language",
-			"$language",
-			"language",
-			"caterory"
+			"h1"
 		],
 		"highlight": true,
 		"in_selection": false,

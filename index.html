@@ -9,13 +9,15 @@
 <body>
 
 	<div id="js-overlay"></div>
+
+	<canvas id="canvas" width="1920"  height="1080" style="display:none"></canvas>
 	
 	<div class="container">
 
 		<h1>Cheese<em>!</em><br><span>please</span></h1>
 
 		<figure class="preview" id="js-preview">
-			<canvas id="videoCanvas" width="640" height="480"></canvas>
+			<video id="video"       autoplay="true" width="640" height="480"></video>
 
 			<div class="countdown" id="js-countdown">
 				<div>3</div>
@@ -37,11 +39,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/cheese.js"></script>
-
-	<script type="text/javascript" src="js/jsmpg.js"></script>
-	<script type="text/javascript">
-		// Setup the WebSocket connection and start the player
-	</script>
 
 </body>
 </html>
