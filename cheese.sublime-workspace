@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"vide",
+				"videoStreamPID"
+			],
+			[
 				"previ",
 				"previewImage"
 			],
@@ -189,9 +193,6 @@
 			]
 		]
 	},
-	"buffers":
-	[
-	],
 	"build_system": "",
 	"build_system_choices":
 	[
@@ -246,12 +247,10 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/var/www/html/cheese"
-	],
 	"file_history":
 	[
+		"/var/www/html/cheese/js/assets/owl.carousel.css",
+		"/home/hannenz/jsmpeg/stream-example.html",
 		"/var/www/html/fototest/css/main.css",
 		"/var/www/html/fototest/sass/main.css",
 		"/var/www/html/thera-trainer/fileadmin/rd2015/js/src/main.js",
@@ -377,9 +376,7 @@
 		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/main.scss",
 		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/_colors.scss",
 		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/_settings.scss",
-		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/partials/_heroslider.scss",
-		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/partials/_layout.scss",
-		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/partials/_navigation.scss"
+		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/partials/_heroslider.scss"
 	],
 	"find":
 	{
@@ -404,6 +401,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"600px",
+			"600",
+			"800",
+			"Request",
+			"				\n",
+			"$.get('/cheese",
+			");\n",
 			"__title",
 			"annot",
 			"light",
@@ -524,14 +528,7 @@
 			"language",
 			"$language",
 			"language",
-			"caterory",
-			"description",
-			"filename",
-			"title",
-			"string",
-			"language",
-			"home.html",
-			"= #"
+			"caterory"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -549,14 +546,6 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"groups":
-	[
-		{
-			"sheets":
-			[
-			]
-		}
-	],
 	"incremental_find":
 	{
 		"height": 23.0
@@ -587,7 +576,7 @@
 			1.0
 		]
 	},
-	"menu_visible": true,
+	"menu_visible": false,
 	"output.find_results":
 	{
 		"height": 0.0
@@ -605,7 +594,6 @@
 		"height": 102.0
 	},
 	"pinned_build_system": "",
-	"project": "cheese.sublime-project",
 	"replace":
 	{
 		"height": 42.0
@@ -734,7 +722,6 @@
 		],
 		"width": 701.0
 	},
-	"selected_group": 0,
 	"settings":
 	{
 		"xdebug":

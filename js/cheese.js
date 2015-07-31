@@ -6,6 +6,8 @@
  */
 $(document).ready(function() {
 
+	var pictures = [];
+
 	var client = new WebSocket( 'ws://127.0.0.1:8084/' );
 	var canvas = document.getElementById('videoCanvas');
 	var player = new jsmpeg(client, {
@@ -16,6 +18,11 @@ $(document).ready(function() {
 	var $preview = $('#js-preview');
 	var $thumbsCarousel = $('#js-thumbs');
 	var $countdown = $('#js-countdown');
+	var $overlay = $('#js-overlay')
+
+	$overlay.on('click', function() {
+		$overlay.removeClass('is-active').empty();
+	});
 
 	$('#js-cheese-button').on('click', onCheeseButtonClicked);
 	$('#js-print-button').on('click', onPrintButtonClicked);
@@ -33,22 +40,17 @@ $(document).ready(function() {
 	// 	player.play();
 	// });
 
-	$('.thumb img').on('click', function(ev) {
+	function previewImage() {
 
-		// var src = $(this).attr('src');
-		// console.log(src);
+		var $img = $(this).clone();
+		$img.removeAttr('style');
 
-		// var $previewImage = $('.preview img');
-		// if ($previewImage.length > 0){
-		// 	$('.preview img').attr('src', src);
-		// }
-		// else {
-		// 	var img = new Image();
-		// 	img.src = src;
-		// 	$('.preview').append($(img));
-		// }
-		// $('#filename').attr('value', src);
-	});
+		$overlay
+			.empty()
+			.append($img)
+			.addClass('is-active')
+		;
+	}
 
 	/**
 	 * Callback when Chees button has been clicked
@@ -71,7 +73,11 @@ $(document).ready(function() {
 	function takeFoto() {
 		var img = new Image();
 		img.src = canvas.toDataURL();
-		$owl.trigger('add', [$(img), 0]);
+		var $img = $(img);
+		$img.on('click', previewImage);
+
+		$owl.trigger('add', [$img, 0]);
+		$owl.trigger('refresh');
 	}
 
 	function onPrintButtonClicked () {
