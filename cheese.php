@@ -108,9 +108,11 @@ class Cheese {
 						$this->Response->setError('imagecreatefromstring() failed');
 					}
 					else {
-						imagejpeg($im, __DIR__ . DIRECTORY_SEPARATOR . 'pictures' . DIRECTORY_SEPARATOR . uniqid() . '.jpg');
-						imagedestroy($im);
+						if (!imagejpeg($im, __DIR__ . DIRECTORY_SEPARATOR . 'pictures' . DIRECTORY_SEPARATOR . uniqid() . '.jpg', 100)) {
+							$this->Response->setError('imagejpeg() failed');
+						}
 					}
+					imagedestroy($im);
 				}
 				break;
 

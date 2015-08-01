@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"imagej",
+				"imagejpeg"
+			],
+			[
 				"anima",
 				"animation-fill-mode: "
 			],
@@ -201,6 +205,36 @@
 			]
 		]
 	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1220,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/cheese.js",
+			"settings":
+			{
+				"buffer_size": 4150,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n/**\n * class cheese\n * \n * Main Application class\n * \n * @author: Johannes Braub <j.braun@agentur-halma.de>\n * @package cheese\n */\nnamespace HALMA\\Cheese;\n\nclass Cheese {\n\n	protected $fotodir = 'fotos/';\n\n	/**\n	 * Camera object instance\n	 * @var Object\n	 */\n	protected $Camera;\n\n	/**\n	 * Request object instance\n	 * @var Object\n	 */\n	protected $Request;\n\n	/**\n	 * Response object instance\n	 * @var Object\n	 */\n	protected $Response;\n\n\n	/**\n	 * Constructor\n	 * \n	 * @return void\n	 */\n	public function __construct () {\n\n		// Start a session\n		session_start();\n\n		/** Fixme: Autoload! */\n		require_once(__DIR__ . DIRECTORY_SEPARATOR . 'camera.php');\n		require_once(__DIR__ . DIRECTORY_SEPARATOR . 'request.php');\n		require_once(__DIR__ . DIRECTORY_SEPARATOR . 'response.php');\n\n		$this->Request = new Request();\n		$this->Response = new Response();\n		$this->Camera = new Camera();\n	}\n\n\n	/**\n	 * Main dispatcher\n	 * \n	 * @return void\n	 */\n	public function run() {\n\n		/* Only Ajax requests allowed */\n		if (!$this->Request->isAjax()) {\n			die ('No direct access!');\n		}\n\n		/* Check if an action is given */\n		if (empty($this->Request->data['action'])) {\n			$ret = json_encode(array(\n				'success' => false,\n				'message' => 'No action specified'\n			));\n			print_r($ret);\n			die();\n		}\n\n		/* Dispatch the action */\n		switch ($this->Request->data['action']) {\n			case 'take_foto':\n				$data = $this->Camera->takeFoto();\n				if (empty($data)) {\n					$this->Response->setError('Failed to take a foto');\n				}\n				else {\n					$this->Response->setPayload($data);\n				}\n				break;\n\n			case 'hardcopy':\n				echo \"Printing a foto\";\n				die();\n				$this->hardcopy();\n				break;\n\n			case 'cancel':\n				echo \"Starting over...\";\n				die();\n				// unset($_SESSION);\n				// session_destory();\n				break;\n\n			case 'save_picture':\n				if (!empty($this->Request->data['imageData'])) {\n\n					$im = imagecreatefromstring(base64_decode(substr($this->Request->data['imageData'], 22)));\n					if ($im === false) {\n						$this->Response->setError('imagecreatefromstring() failed');\n					}\n					else {\n						if (imagejpeg($im, __DIR__ . DIRECTORY_SEPARATOR . 'pictures' . DIRECTORY_SEPARATOR . uniqid() . '.jpg'), 100) {\n							$this->Response->setError('imagejpeg() failed');\n						}\n					}\n					imagedestroy($im);\n				}\n				break;\n\n\n			// case 'startvideostream':\n			// 	$this->Camera->startVideoStream();\n			// 	break;\n\n			// case 'stopvideostream':\n			// 	$this->Camera->stopVideoStream();\n			// 	break;\n\n			default:\n				$this->Response->setError('Invalid action: '.$this->Request->data['action']);\n		}\n\n		$this->Response->send();\n	}\n}\n\n//start_session();\n$cheese = new Cheese();\n$cheese->run();\n",
+			"file": "cheese.php",
+			"file_size": 2668,
+			"file_write_time": 130828546309536668,
+			"settings":
+			{
+				"buffer_size": 2673,
+				"line_ending": "Unix"
+			}
+		}
+	],
 	"build_system": "",
 	"build_system_choices":
 	[
@@ -255,6 +289,11 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/var/www/html/cheese",
+		"/var/www/html/cheese/js"
+	],
 	"file_history":
 	[
 		"/var/www/html/cheese/css/main.css",
@@ -409,6 +448,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"takeFoto",
+			"$overl",
+			"$thumbSC",
+			"$preview",
 			"			z-index:",
 			"			background-color",
 			"'image'",
@@ -532,11 +575,7 @@
 			"header",
 			"translateX(0) translate3d",
 			"mobile-nav",
-			".secondary-nav",
-			"menu",
-			"mobile-nav",
-			"mobile",
-			"h1"
+			".secondary-nav"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -554,6 +593,111 @@
 		"whole_word": false,
 		"wrap": true
 	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1220,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								259,
+								259
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/cheese.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3060,
+								3060
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1776.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "cheese.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2673,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1788,
+								1788
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 1227.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
 	"incremental_find":
 	{
 		"height": 23.0
@@ -602,6 +746,7 @@
 		"height": 102.0
 	},
 	"pinned_build_system": "",
+	"project": "cheese.sublime-project",
 	"replace":
 	{
 		"height": 42.0
@@ -730,6 +875,7 @@
 		],
 		"width": 701.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 		"xdebug":
