@@ -13,11 +13,12 @@
 	<canvas id="canvas" width="1280"  height="720" style="display:none"></canvas>
 	
 	<div class="container">
+		<div id="js-flash-message"></div>
 
 		<h1>Cheese<em>!</em><br><span>please</span></h1>
 
 		<figure class="preview" id="js-preview">
-			<video id="video"       autoplay="true" width="640" height="480"></video>
+			<video id="video" class="is-mirrored" autoplay="true" width="640" height="480"></video>
 
 			<div class="countdown" id="js-countdown">
 				<div>3</div>
@@ -28,8 +29,9 @@
 
 		<nav>
 			<a id="js-cheese-button" href="javascript:void(0);" class="button">Kamera auslösen</a>
-			<a id="js-print-button"  href="javascript:void(0);" class="button print-button">Foto drucken</a>
+<!-- 			<a id="js-print-button"  href="javascript:void(0);" class="button print-button">Foto drucken</a>
 			<a id="js-cancel-button" href="javascript:void(0);" class="button cancel-button">Von vorn</a>
+ -->			<a id="js-mirror-button" href="javascript:void(0);" class="button mirror-button">Spiegeln</a>
 		</nav>
 
 		<div id="js-thumbs" class="owl-carousel">

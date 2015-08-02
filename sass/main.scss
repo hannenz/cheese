@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Lato");
 @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
 
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+@import "partials/flash";
+
 $previewWidth:854px;
 $previewHeight:480px;
 
@@ -171,7 +176,7 @@ h1 {
 	}
 
 	to {
-		transform:translateZ(-999999px);
+		transform:translateZ(-99999px);
 		opacity:0;
 	}
 }
@@ -194,3 +199,6 @@ h1 {
 	}
 }
 
+#video.is-mirrored {
+	transform:rotateY(180deg);
+}

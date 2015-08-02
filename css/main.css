@@ -1,9 +1,108 @@
 @import url("https://fonts.googleapis.com/css?family=Lato");
 @import url("https://fonts.googleapis.com/css?family=Bowlby+One+SC");
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+.flash-alert {
+  background-color: #fff6bf;
+  color: #8c7800;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.75em;
+  padding: 0.75em;
+  text-align: center;
+}
+
+.flash-alert a {
+  color: #594c00;
+  text-decoration: underline;
+}
+
+.flash-alert a:focus,
+.flash-alert a:hover {
+  color: black;
+}
+
+.flash-error {
+  background-color: #fbe3e4;
+  color: #96151b;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.75em;
+  padding: 0.75em;
+  text-align: center;
+}
+
+.flash-error a {
+  color: #6a0f13;
+  text-decoration: underline;
+}
+
+.flash-error a:focus,
+.flash-error a:hover {
+  color: #110203;
+}
+
+.flash-notice {
+  background-color: #e5edf8;
+  color: #244e87;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.75em;
+  padding: 0.75em;
+  text-align: center;
+}
+
+.flash-notice a {
+  color: #19375f;
+  text-decoration: underline;
+}
+
+.flash-notice a:focus,
+.flash-notice a:hover {
+  color: #04080e;
+}
+
+.flash-success {
+  background-color: #e6efc2;
+  color: #56651a;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.75em;
+  padding: 0.75em;
+  text-align: center;
+}
+
+.flash-success a {
+  color: #333c10;
+  text-decoration: underline;
+}
+
+.flash-success a:focus,
+.flash-success a:hover {
+  color: black;
+}
+
+#js-flash-message {
+  transition: all 200ms;
+}
+
+#js-flash-message.is-hidden {
+  opacity: 0;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 body {
   background-color: #f0f0f0;
@@ -11,7 +110,8 @@ body {
   font-family: Lato, sans;
   font-size: 100%;
   line-height: 1.4em;
-  color: #505050; }
+  color: #505050;
+}
 
 #js-overlay {
   position: fixed;
@@ -21,38 +121,50 @@ body {
   height: 100%;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.9);
-  display: none; }
-  #js-overlay.is-active {
-    display: block; }
-  #js-overlay img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 80%; }
+  display: none;
+}
+
+#js-overlay.is-active {
+  display: block;
+}
+
+#js-overlay img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+}
 
 #video {
   width: 854px;
-  height: 480px; }
+  height: 480px;
+}
 
 h1 {
   font-family: Lato, sans;
   text-transform: uppercase;
   font-size: 3rem;
   margin: 1.5em 0;
-  line-height: 0.5em; }
-  h1 em {
-    color: orange; }
-  h1 span {
-    color: #fff;
-    text-transform: none;
-    font-size: 0.5em;
-    line-height: 0.5em; }
+  line-height: 0.5em;
+}
+
+h1 em {
+  color: orange;
+}
+
+h1 span {
+  color: #fff;
+  text-transform: none;
+  font-size: 0.5em;
+  line-height: 0.5em;
+}
 
 .container {
   max-width: 1024px;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+}
 
 .button {
   background-color: orange;
@@ -66,9 +178,12 @@ h1 {
   line-height: 1em;
   font-size: 1em;
   font-family: Lato;
-  margin: 0 0.25em; }
-  .button.print-button {
-    background-color: skyblue; }
+  margin: 0 0.25em;
+}
+
+.button.print-button {
+  background-color: skyblue;
+}
 
 .preview {
   width: 854px;
@@ -78,7 +193,8 @@ h1 {
   margin: 1em auto;
   display: block;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+}
 
 .countdown {
   position: absolute;
@@ -88,56 +204,87 @@ h1 {
   height: 480px;
   display: block;
   perspective: 1000px;
-  perspective-origin: 50% 50%; }
-  .countdown > div {
-    width: 854px;
-    height: 480px;
-    font-family: 'Bowlby One SC';
-    font-size: 160px;
-    text-align: center;
-    line-height: 480px;
-    color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0; }
-    .countdown > div:nth-child(1) {
-      transform: translateZ(1500px); }
-    .countdown > div:nth-child(2) {
-      transform: translateZ(1500px); }
-    .countdown > div:nth-child(3) {
-      transform: translateZ(1500px); }
-  .countdown.is-active {
-    display: block;
-    animation: countdown 3s; }
-    .countdown.is-active > div:nth-child(1) {
-      animation: fly 6s ease-in;
-      animation-fill-mode: forward; }
-    .countdown.is-active > div:nth-child(2) {
-      animation: fly 6s ease-in;
-      animation-delay: 1s;
-      animation-fill-mode: forward; }
-    .countdown.is-active > div:nth-child(3) {
-      animation: fly 6s ease-in;
-      animation-delay: 2s;
-      animation-fill-mode: forward; }
+  perspective-origin: 50% 50%;
+}
+
+.countdown > div {
+  width: 854px;
+  height: 480px;
+  font-family: 'Bowlby One SC';
+  font-size: 160px;
+  text-align: center;
+  line-height: 480px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.countdown > div:nth-child(1) {
+  transform: translateZ(1500px);
+}
+
+.countdown > div:nth-child(2) {
+  transform: translateZ(1500px);
+}
+
+.countdown > div:nth-child(3) {
+  transform: translateZ(1500px);
+}
+
+.countdown.is-active {
+  display: block;
+  animation: countdown 3s;
+}
+
+.countdown.is-active > div:nth-child(1) {
+  animation: fly 6s ease-in;
+  animation-fill-mode: forward;
+}
+
+.countdown.is-active > div:nth-child(2) {
+  animation: fly 6s ease-in;
+  animation-delay: 1s;
+  animation-fill-mode: forward;
+}
+
+.countdown.is-active > div:nth-child(3) {
+  animation: fly 6s ease-in;
+  animation-delay: 2s;
+  animation-fill-mode: forward;
+}
 
 .owl-carousel {
-  margin: 3em 0; }
+  margin: 3em 0;
+}
 
 @keyframes fly {
   from {
     transform: translateZ(1500px);
-    opacity: 1; }
+    opacity: 1;
+  }
   to {
-    transform: translateZ(-999999px);
-    opacity: 0; } }
+    transform: translateZ(-99999px);
+    opacity: 0;
+  }
+}
+
 @keyframes countdown {
   0% {
-    background-color: rgba(255, 255, 255, 0); }
+    background-color: rgba(255, 255, 255, 0);
+  }
   90% {
-    background-color: rgba(255, 255, 255, 0); }
+    background-color: rgba(255, 255, 255, 0);
+  }
   91% {
-    background-color: white; }
+    background-color: white;
+  }
   100% {
     background-color: rgba(255, 255, 255, 0);
-    transform: translateZ(0, 0, 5000px); } }
+    transform: translateZ(0, 0, 5000px);
+  }
+}
+
+#video.is-mirrored {
+  transform: rotateY(180deg);
+}

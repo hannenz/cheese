@@ -1,3 +1,9 @@
+(function(doc, nav){
+	console.debug(doc);
+	console.debug(nav);
+})(document, navigator);
+
+
 /**
  * cheese.js
  *
@@ -10,13 +16,17 @@ $(document).ready(function() {
 	var pictureWidth = 1280;
 	var pictureHeight = 720;
 
-	var video = document.querySelector('#video');
-	var canvas = document.querySelector('#canvas');
+	var video = document.getElementById('video');
+	var canvas = document.getElementById('canvas');
+
+	var flashMessage = document.getElementById('js-flash-message');
+	flashMessage.addEventListener('click', function(ev){
+		this.classList.add('is-hidden');
+	});
 
 	// Set canvas dimensions to (hires) picture size
 	canvas.style.width = pictureWidth + 'px';
 	canvas.style.height = pictureHeight + 'px';
-	var ctx = canvas.getContext('2d');
 
 	var webcamStream = null;
 
@@ -45,9 +55,11 @@ $(document).ready(function() {
 				console.log(err);
 			}
 		);
+		setFlashMessage('Camera initialized successfully', 'success');
 	}
 	else {
 		console.log ('getUserMedia seems not to be supported!');
+		setFlashMessage('Could not access camera', 'error');
 	}
 
 
@@ -67,6 +79,7 @@ $(document).ready(function() {
 	$('#js-cheese-button').on('click', onCheeseButtonClicked);
 	$('#js-print-button').on('click', onPrintButtonClicked);
 	$('#js-cancel-button').on('click', onCancelButtonClicked);
+	$('#js-mirror-button').on('click', onMirrorButtonClicked);
 
 	var $owl = $('.owl-carousel');
 
@@ -106,6 +119,13 @@ $(document).ready(function() {
 		}
 
 		// Capture frame from video into canvas
+		var ctx = canvas.getContext('2d');
+
+		// mirror canvas if video element is mirrored
+		if (video.classList.contains('is-mirrored')){
+			ctx.translate(pictureWidth, 0);
+			ctx.scale(-1, 1);
+		}
 		ctx.drawImage(video, 0, 0);
 
 		// Add layers for »fun«
@@ -203,5 +223,36 @@ $(document).ready(function() {
 			console.log(status + ',' + response);
 		});
 	}
+
+	function onMirrorButtonClicked() {
+		video.classList.toggle('is-mirrored');
+	}
+
+	function setFlashMessage(mssg, type) {
+
+		flashMessage.textContent = mssg;
+		flashMessage.removeAttribute('class');
+
+		switch (type) {
+			case 'error':
+				flashMessage.classList.add('flash-error');
+				break;
+			case 'warning':
+				flashMessage.classList.add('flash-alert');
+				break;
+			case 'success':
+				flashMessage.classList.add('flash-success');
+				break;
+			default:
+				flashMessage.classList.add('flash-notice');
+				break;
+		}
+
+		flashMessage.classList.remove('is-hidden');
+		setTimeout(function() {
+			flashMessage.classList.add('is-hidden');
+		}, 3000);
+	}
+
 });
 
