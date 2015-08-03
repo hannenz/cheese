@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Cheese - please!</title>
+
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 	<link rel="stylesheet" href="css/owl.carousel.css">
 </head>
@@ -29,9 +30,13 @@
 
 		<nav>
 			<a id="js-cheese-button" href="javascript:void(0);" class="button">Kamera auslösen</a>
-<!-- 			<a id="js-print-button"  href="javascript:void(0);" class="button print-button">Foto drucken</a>
-			<a id="js-cancel-button" href="javascript:void(0);" class="button cancel-button">Von vorn</a>
- -->			<a id="js-mirror-button" href="javascript:void(0);" class="button mirror-button">Spiegeln</a>
+
+			<label class="label-switch">
+				Spiegeln
+				<input type="checkbox" id="js-mirror-checkbox" checked />
+				<div class="checkbox"></div>
+			</label>
+
 		</nav>
 
 		<div id="js-thumbs" class="owl-carousel">
@@ -41,6 +46,5 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/cheese.js"></script>
-
 </body>
 </html>

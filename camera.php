@@ -44,7 +44,7 @@ class Camera {
 		// Merge with default options
 		$options = array_merge (
 			array(
-				'resolution' => '800x600',
+				'resolution' => '19200x1080',
 				'format' => 'png'
 			),
 			$options

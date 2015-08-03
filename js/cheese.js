@@ -1,9 +1,3 @@
-(function(doc, nav){
-	console.debug(doc);
-	console.debug(nav);
-})(document, navigator);
-
-
 /**
  * cheese.js
  *
@@ -33,7 +27,7 @@ $(document).ready(function() {
 	// Setup video stream
 	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
-	if (navigator.getUserMedia && true) {
+	if (navigator.getUserMedia) {
 		navigator.getUserMedia(
 			{
 				audio : false,
@@ -49,19 +43,17 @@ $(document).ready(function() {
 			function(stream) {
 				webcamStream = stream
 				video.src = window.URL.createObjectURL(stream);
+//				setFlashMessage('Camera initialized successfully', 'success');
 			},
 			function(err) {
-				alert ('Video error!');
-				console.log(err);
+				setFlashMessage('Could not get video stream: ' + err.name, 'error');
 			}
 		);
-		setFlashMessage('Camera initialized successfully', 'success');
 	}
 	else {
 		console.log ('getUserMedia seems not to be supported!');
 		setFlashMessage('Could not access camera', 'error');
 	}
-
 
 	var $countdown = $('#js-countdown');
 	var $overlay = $('#js-overlay')
@@ -71,7 +63,6 @@ $(document).ready(function() {
 		takePicture();
 	});
 
-
 	$overlay.on('click', function() {
 		$overlay.removeClass('is-active').empty();
 	});
@@ -80,9 +71,9 @@ $(document).ready(function() {
 	$('#js-print-button').on('click', onPrintButtonClicked);
 	$('#js-cancel-button').on('click', onCancelButtonClicked);
 	$('#js-mirror-button').on('click', onMirrorButtonClicked);
+	$('#js-mirror-checkbox').on('change', onMirrorCheckboxChanged);
 
 	var $owl = $('.owl-carousel');
-
 	$owl.owlCarousel({
 		items:3,
 		margin:10
@@ -126,6 +117,7 @@ $(document).ready(function() {
 			ctx.translate(pictureWidth, 0);
 			ctx.scale(-1, 1);
 		}
+
 		ctx.drawImage(video, 0, 0);
 
 		// Add layers for »fun«
@@ -168,6 +160,60 @@ $(document).ready(function() {
 			}
 		);
 	}
+
+	/**
+	 * Talke a foto / variant
+	 *
+	 * Stop webcam stream, call php script to take a single foto from cli with fswebcam
+	 * Might be better quality than capturing from the webcam video stream,
+	 * but it turned out that both methods seem to be equal. regarding the resulting picture's quality
+	 */
+	function takePicture2() {
+
+		// Stop webcam's video stream
+		webcamStream.getVideoTracks()[0].stop();
+		webcamStream.stop();
+
+		// Give the hardware a short moment to release
+		setTimeout(function() {
+			// Capture frame from video into canvas
+			var ctx = canvas.getContext('2d');
+
+			// mirror canvas if video element is mirrored
+			if (video.classList.contains('is-mirrored')){
+				ctx.translate(pictureWidth, 0);
+				ctx.scale(-1, 1);
+			}
+
+			// Request foto from PHP / cli
+			$.get('cheese.php?action=take_foto', function(response) {
+				var r = JSON.parse(response);
+				if (r.error) {
+					setFlashMessage('Error when trying to take a picture: ' + r.message, 'error');
+					return;
+				}
+
+				var img = new Image();
+				img.src = 'data:image/png;base64,' + r.payload;
+
+				ctx.drawImage(img, 0, 0);
+
+				addLayers(ctx);
+
+				var $img = $(img);
+				$img.on('click', previewImage);
+
+				// Add image to thumbnail history
+				$owl.trigger('add', [$img, 0]);
+				$owl.trigger('refresh');
+				$owl.trigger('to', [0, 400]);
+
+				webcamStream.play();
+			});
+		}, 500);
+
+	}
+
 
 	function addLayers(ctx) {
 		var layers = [
@@ -228,6 +274,15 @@ $(document).ready(function() {
 		video.classList.toggle('is-mirrored');
 	}
 
+	function onMirrorCheckboxChanged () {
+		if (this.checked) {
+			video.classList.add('is-mirrored');
+		}
+		else {
+			video.classList.remove('is-mirrored');
+		}
+	}
+
 	function setFlashMessage(mssg, type) {
 
 		flashMessage.textContent = mssg;
@@ -253,6 +308,4 @@ $(document).ready(function() {
 			flashMessage.classList.add('is-hidden');
 		}, 3000);
 	}
-
 });
-
