@@ -107,60 +107,124 @@ h1 {
 
 }
 
+/**
+ * Countdown
+ */
+
+$dark-color:#404040;
+$light-color:#808080;
+$opacity:0.6;
 .countdown {
+	display:none;
 	position:absolute;
-	left:0;
 	top:0;
-	width:$previewWidth;
-	height:$previewHeight;
-	display:block;
-	perspective:1000px;
-	perspective-origin: 50% 50%;
-
-	> div {
-		width:$previewWidth;
-		height:$previewHeight;
-		font-family:'Bowlby One SC';
-		font-size:160px;
-		text-align: center;
-		line-height:$previewHeight;
-		color:#fff;
+	left:0;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	opacity:$opacity;
+	background-color:$light-color;
+	background-image:linear-gradient(to right, transparent 50%, $dark-color 0);
+	&::before {
+		content:'';
+		display:block;
 		position:absolute;
-		top:0;
-		left:0;
-
-		&:nth-child(1) {
-			transform:translateZ(1500px);
-			// transition:all 6s ease-in;
-		}
-		&:nth-child(2) {
-			transform:translateZ(1500px);
-			// transition:all 6s ease-in 1s;
-		}
-		&:nth-child(3) {
-			transform:translateZ(1500px);
-			// transition:all 6s ease-in 2s;
-		}
+		top:50%;
+		left:50%;
+		height:200%;
+		width:100%;
+		background-color:inherit;
+		transform-origin:0 50%;
+		transform:translate(0%, -50%) rotate(0turn);
+		z-index:1;
 	}
-
 	&.is-active {
 		display:block;
-		animation:countdown 3s;
-		
-		> div:nth-child(1) {
-			animation:fly 6s ease-in;
-			animation-fill-mode: forward;
+		&::before {
+			animation:turnaround 0.5s linear 6, bg 1s step-end 3;
+			animation-fill-mode: forwards;
 		}
-		> div:nth-child(2) {
-			animation:fly 6s ease-in;
-			animation-delay: 1s;
-			animation-fill-mode: forward;
+		.numbers {
+			animation:numbers 3s steps(3, end) 1;
+			animation-fill-mode: forwards;
 		}
-		> div:nth-child(3) {
-			animation:fly 6s ease-in;
-			animation-delay: 2s;
-			animation-fill-mode: forward;
+	}
+}
+
+.numbers {
+	width:300%;
+	height:100%;
+	position:absolute;
+
+	z-index:10;
+	.number {
+		height:100%;
+		width:33.33%;
+		display:block;
+		float:left;
+		z-index:10;
+		position:relative;
+
+		> span {
+			vertical-align: middle;
+			text-align:center;
+			font-size:400px;
+			font-weight:bold;;
+			color:#101010;
+			font-family:sans-serif;
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%, -50%);
 		}
+	}
+}
+.cross {
+	position:absolute;
+	height:100%;
+	width:100%;
+	z-index:3;
+	background-image:linear-gradient(to right, transparent 49.5%, black 49.5%, black 50.5%, transparent 0), linear-gradient(to bottom, transparent 49.5%, black 49.5%, black 50.5%, transparent 0);
+	&::before {
+		content:'';
+		position:absolute;
+		height:450px;
+		width:450px;
+		border-radius:50%;
+		border:8px solid gainsboro;
+		top:50%;
+		left:50%;
+		transform:translate(-50%, -50%);
+	}
+	&::after {
+		content:'';
+		position:absolute;
+		height:380px;
+		width:380px;
+		border-radius:50%;
+		border:8px solid gainsboro;
+		top:50%;
+		left:50%;
+		transform:translate(-50%, -50%);
+	}
+}
+
+
+@keyframes turnaround {
+	to {
+		transform:translate(0, -50%) rotate(180deg);
+	}
+}
+
+@keyframes bg {
+	50% {
+		background:$dark-color;
+	}
+}
+
+@keyframes numbers {
+	to {
+		transform:translate(-100%, 0);
 	}
 }
 
@@ -169,35 +233,6 @@ h1 {
 	margin:3em 0;
 }
 
-@keyframes fly {
-	from {
-		transform:translateZ(1500px);
-		opacity:1;
-	}
-
-	to {
-		transform:translateZ(-99999px);
-		opacity:0;
-	}
-}
-
-@keyframes countdown {
-
-	0% {
-		background-color:rgba(255, 255, 255, 0);
-	}
-
-	90% {
-		background-color:rgba(255, 255, 255, 0);
-	}
-	91% {
-		background-color:rgba(255, 255, 255, 1.0);
-	}
-	100% {
-		background-color:rgba(255, 255, 255, 0);
-		transform:translateZ(0, 0, 5000px);
-	}
-}
 
 #video.is-mirrored {
 	transform:rotateY(180deg);

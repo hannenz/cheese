@@ -11,7 +11,6 @@
 
 	<div id="js-overlay"></div>
 
-	<canvas id="canvas" width="1280"  height="720" style="display:none"></canvas>
 	
 	<div class="container">
 		<div id="js-flash-message"></div>
@@ -21,12 +20,15 @@
 		<figure class="preview" id="js-preview">
 			<video id="video" class="is-mirrored" autoplay="true" width="640" height="480"></video>
 
-			<div class="countdown" id="js-countdown">
-				<div>3</div>
-				<div>2</div>
-				<div>1</div>
+			<div class="countdown">
+				<div class="numbers">
+					<div class="number"><span>3</span></div>
+					<div class="number"><span>2</span></div>
+					<div class="number"><span>1</span></div>
+				</div>
+				<div class="cross"></div>
 			</div>
-		</figure>
+ 		</figure>
 
 		<nav>
 			<a id="js-cheese-button" href="javascript:void(0);" class="button">Kamera auslösen</a>

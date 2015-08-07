@@ -8,10 +8,18 @@ $(document).ready(function() {
 
 	// HiRes picture resolution (depends on the webcam)
 	var pictureWidth = 1280;
-	var pictureHeight = 720;
+	var pictureHeight = 1024;
 
 	var video = document.getElementById('video');
-	var canvas = document.getElementById('canvas');
+
+	var canvas = document.createElement('canvas');
+	canvas.setAttribute('width', pictureWidth);
+	canvas.setAttribute('height', pictureHeight);
+	canvas.style.display = 'none';
+	canvas.style.width = pictureWidth + 'px';
+	canvas.style.height = pictureHeight + 'px';
+	canvas.style.backgroundColor = 'gainsboro';
+	document.body.appendChild(canvas);
 
 	var flashMessage = document.getElementById('js-flash-message');
 	flashMessage.addEventListener('click', function(ev){
@@ -19,8 +27,6 @@ $(document).ready(function() {
 	});
 
 	// Set canvas dimensions to (hires) picture size
-	canvas.style.width = pictureWidth + 'px';
-	canvas.style.height = pictureHeight + 'px';
 
 	var webcamStream = null;
 
@@ -55,10 +61,11 @@ $(document).ready(function() {
 		setFlashMessage('Could not access camera', 'error');
 	}
 
-	var $countdown = $('#js-countdown');
+	var $countdown = $('.countdown').first();
 	var $overlay = $('#js-overlay')
 
-	$countdown.on('animationend', function() {
+	$('.numbers').first().on('animationend', function() {
+		console.log('animation ended');
 		$countdown.removeClass('is-active');
 		takePicture();
 	});
@@ -67,6 +74,14 @@ $(document).ready(function() {
 		$overlay.removeClass('is-active').empty();
 	});
 
+
+	document.addEventListener('keyup', function(ev) {
+		switch (ev.keyCode ){
+			case 32:
+			case 13:
+				onCheeseButtonClicked();
+		}
+	});
 	$('#js-cheese-button').on('click', onCheeseButtonClicked);
 	$('#js-print-button').on('click', onPrintButtonClicked);
 	$('#js-cancel-button').on('click', onCancelButtonClicked);
@@ -97,8 +112,12 @@ $(document).ready(function() {
 	function onCheeseButtonClicked () {
 		// srart countdown, then...
 
-		$countdown.addClass('is-active');
-
+		if ($countdown.length > 0){
+			$countdown.addClass('is-active');
+		}
+		else {
+			takePicture();
+		}
 	}
 
 	/**
@@ -121,7 +140,7 @@ $(document).ready(function() {
 		ctx.drawImage(video, 0, 0);
 
 		// Add layers for »fun«
-		addLayers(ctx);
+		//addLayers(ctx);
 
 		// Create dataURL (base64 encoded string)
 		var img = new Image();
@@ -198,7 +217,7 @@ $(document).ready(function() {
 
 				ctx.drawImage(img, 0, 0);
 
-				addLayers(ctx);
+				//addLayers(ctx);
 
 				var $img = $(img);
 				$img.on('click', previewImage);
@@ -220,7 +239,7 @@ $(document).ready(function() {
 			{
 				type : 'image',
 				image : 'img/ribbon.png',
-				position : [1600, 0]
+				position : [0, 0]
 			},
 			{
 				type : 'text',

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"webcam",
+				"webcamStream"
+			],
+			[
 				"pictu",
 				"pictureWidth"
 			],
@@ -205,50 +209,6 @@
 			]
 		]
 	},
-	"buffers":
-	[
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 1375,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "sass/main.scss",
-			"settings":
-			{
-				"buffer_size": 3178,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "sass/partials/_flash.scss",
-			"settings":
-			{
-				"buffer_size": 772,
-				"line_ending": "Unix",
-				"name": "$base-spacing: 1.5em !default;"
-			}
-		},
-		{
-			"file": "js/cheese.js",
-			"settings":
-			{
-				"buffer_size": 5453,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "cheese.php",
-			"settings":
-			{
-				"buffer_size": 2674,
-				"line_ending": "Unix"
-			}
-		}
-	],
 	"build_system": "",
 	"build_system_choices":
 	[
@@ -303,13 +263,6 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"//var/www/html/cheese",
-		"//var/www/html/cheese/css",
-		"//var/www/html/cheese/js",
-		"//var/www/html/cheese/sass"
-	],
 	"file_history":
 	[
 		"/var/www/html/cheese/css/main.css",
@@ -464,6 +417,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"takeP",
+			"mediaStream",
+			"stop",
+			"radius",
+			"color",
 			"ctx",
 			"querySelector",
 			"			z-index:",
@@ -586,12 +544,7 @@
 			"viewport",
 			"titleTag",
 			".primary-nav, .secondary-nav",
-			"header",
-			"translateX(0) translate3d",
-			"mobile-nav",
-			".secondary-nav",
-			"menu",
-			"mobile-nav"
+			"header"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -609,175 +562,6 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"groups":
-	[
-		{
-			"selected": 3,
-			"sheets":
-			[
-				{
-					"buffer": 0,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1375,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								475,
-								475
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "sass/main.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3178,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3146,
-								3146
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2299.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "sass/partials/_flash.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 772,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								772,
-								772
-							]
-						],
-						"settings":
-						{
-							"auto_name": "$base-spacing: 1.5em !default;",
-							"incomplete_sync": null,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "js/cheese.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5453,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								62,
-								62
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "cheese.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2674,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2289,
-								2289
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1248.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				}
-			]
-		}
-	],
 	"incremental_find":
 	{
 		"height": 23.0
@@ -826,7 +610,6 @@
 		"height": 102.0
 	},
 	"pinned_build_system": "",
-	"project": "cheese.sublime-project",
 	"replace":
 	{
 		"height": 42.0
@@ -955,7 +738,6 @@
 		],
 		"width": 701.0
 	},
-	"selected_group": 0,
 	"settings":
 	{
 		"xdebug":
