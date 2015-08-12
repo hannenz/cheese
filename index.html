@@ -7,18 +7,18 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 	<link rel="stylesheet" href="css/owl.carousel.css">
 </head>
-<body>
+<body class="settings-active">
 
 	<div id="js-overlay"></div>
-
 	
 	<div class="container">
 		<div id="js-flash-message"></div>
 
-		<h1>Cheese<em>!</em><br><span>please</span></h1>
+
+		<!-- <h1>Cheese<em>!</em><br><span>please</span></h1> -->
 
 		<figure class="preview" id="js-preview">
-			<video id="video" class="is-mirrored" autoplay="true" width="640" height="480"></video>
+			<video id="video" class="is-mirrored" autoplay="true" width="960" height="540"></video>
 
 			<div class="countdown">
 				<div class="numbers">
@@ -32,6 +32,7 @@
 
 		<nav>
 			<a id="js-cheese-button" href="javascript:void(0);" class="button">Kamera auslösen</a>
+			<a id="js-settings-button" href="javascript:void(0);" class="button">Einstellungen</a>
 
 			<label class="label-switch">
 				Spiegeln
@@ -43,6 +44,28 @@
 
 		<div id="js-thumbs" class="owl-carousel">
 		</div>
+	</div>
+
+	<div id="controls">
+		<datalist id="snap"><option value="128"></option></datalist>
+		<datalist id="snap-zoom"><option value="200"></option></datalist>
+		<datalist id="snap-wblnc"><option value="4000"></option></datalist>
+		<div class="input"><label for="brightness">Helligkeit</label><input id="brightness" type="range" min="0" max="255" value="128" data-default="128" list="snap" /></div>
+		<div class="input"><label for="contrast">Kontrast</label><input id="contrast" type="range" min="0" max="255" value="128" list="snap" data-default="128" /></div>
+		<div class="input"><label for="saturation">Sättigung</label><input id="saturation" type="range" min="0" max="255" value="128" list="snap" data-default="128" /></div>
+		<div class="input"><label for="gain">Gain</label><input type="range" min="0" max="255" value="128" id="gain" list="snap" data-default="128" /></div>
+
+		<div class="input"><label for="sharpness">    Schärfe</label><input type="range" min="0" max="255" value="128" id="sharpness" list="snap" data-default="128" /></div>
+
+		<div class="input"><label for="zoom_absolute">Zoom   </label><input type="range" min="100" max="500" value="100" id="zoom_absolute" list="snap-zoom" data-default="100" /></div>
+
+		<div class="input"><label for="white_balance_temperature">Weißabgleich Temperatur</label><input type="range" min="2000" max="6500" value="4000" id="white_balance_temperature" data-default="4000" list="snap-wblnc" /></div>
+
+		<div class="input"><input type="checkbox" id="white_balance_temperature_auto" checked data-default="1" /> <label for="white_balance_temperature_auto">Autom. Weißabgleich</label></div>
+		<div class="input"><input type="checkbox" id="backlight_compensation" data-default="0" /> <label for="backlight_compensation">Gegenlicht Kompensation</label></div>
+		<div class="input"><input type="checkbox" id="focus_auto" checked data-default="1" /> <label for="focus_auto">Autofokus</label></div>
+
+		<p><a id="js-reset-settings" href="javascript:void(0);" class="button">Standard</a></p>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

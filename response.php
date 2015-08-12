@@ -52,6 +52,16 @@ class Response {
 	}
 
 	/**
+	 * setMessage
+	 * 
+	 * @param string  	The message
+	 * @return void
+	 */
+	public function setMessage($message) {
+		$this->data['message'] = $message;
+	}
+
+	/**
 	 * setPayload
 	 * 
 	 * @param mixed 	The data to pass

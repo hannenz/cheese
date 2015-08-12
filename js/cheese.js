@@ -7,8 +7,8 @@
 $(document).ready(function() {
 
 	// HiRes picture resolution (depends on the webcam)
-	var pictureWidth = 1280;
-	var pictureHeight = 1024;
+	var pictureWidth = 1920;
+	var pictureHeight = 1080;
 
 	var video = document.getElementById('video');
 
@@ -20,6 +20,28 @@ $(document).ready(function() {
 	canvas.style.height = pictureHeight + 'px';
 	canvas.style.backgroundColor = 'gainsboro';
 	document.body.appendChild(canvas);
+
+	$('#controls input[type=range').on('input', updateSetting);
+	$('#controls input[type=checkbox]').on('change', updateSetting);
+
+	function updateSetting(ev) {
+		var attribute = $(this).attr('id');
+		var value = this.value;
+
+		$.get('cheese.php?action=set_camera_option&attr=' + attribute + '&val=' + value);
+	}
+
+	// Reset inputs to the camera's current settings
+	$('#controls input').each(function(i, el){
+		var $el = $(el);
+
+		$.get('cheese.php?action=get_camera_option&attr=' + $el.attr('id'), function(response) {
+			var r = JSON.parse(response);
+			var v = parseInt(r.message.match(/([0-9]+)/)[0]);
+			console.log(v);
+			$el.val(v);
+		});
+	});
 
 	var flashMessage = document.getElementById('js-flash-message');
 	flashMessage.addEventListener('click', function(ev){
@@ -39,8 +61,6 @@ $(document).ready(function() {
 				audio : false,
 				video : {
 					mandatory : {
-						// minWidth:1920,
-						// minHeight:1080
 						minWidth: pictureWidth,
 						minHeight: pictureHeight
 					}
@@ -49,7 +69,15 @@ $(document).ready(function() {
 			function(stream) {
 				webcamStream = stream
 				video.src = window.URL.createObjectURL(stream);
-//				setFlashMessage('Camera initialized successfully', 'success');
+				video.addEventListener('timeupdate', function onTimeupdate(event){
+
+					if (event.target.videoWidth && event.target.videoHeight) {
+						videoWidth = event.target.videoWidth;
+						videoHeight = event.target.videoHeight;
+						video.removeEventListener('timeupdate', onTimeupdate, false);
+						console.log('The video stream\'s size is: ' + videoWidth + 'x' + videoHeight);
+					}
+				}, false);
 			},
 			function(err) {
 				setFlashMessage('Could not get video stream: ' + err.name, 'error');
@@ -58,7 +86,7 @@ $(document).ready(function() {
 	}
 	else {
 		console.log ('getUserMedia seems not to be supported!');
-		setFlashMessage('Could not access camera', 'error');
+		setFlashMessage('Camera access is not supported', 'error');
 	}
 
 	var $countdown = $('.countdown').first();
@@ -87,6 +115,9 @@ $(document).ready(function() {
 	$('#js-cancel-button').on('click', onCancelButtonClicked);
 	$('#js-mirror-button').on('click', onMirrorButtonClicked);
 	$('#js-mirror-checkbox').on('change', onMirrorCheckboxChanged);
+	$('#js-settings-button').on('click', onSettingsButtonClicked);
+	$('#js-reset-settings').on('click', onSettingsResetButtonClicked);
+
 
 	var $owl = $('.owl-carousel');
 	$owl.owlCarousel({
@@ -137,7 +168,7 @@ $(document).ready(function() {
 			ctx.scale(-1, 1);
 		}
 
-		ctx.drawImage(video, 0, 0);
+		ctx.drawImage(video, 0, 0, pictureWidth, pictureHeight);
 
 		// Add layers for »fun«
 		//addLayers(ctx);
@@ -171,6 +202,12 @@ $(document).ready(function() {
 					$owl.trigger('add', [$img, 0]);
 					$owl.trigger('refresh');
 					$owl.trigger('to', [0, 400]);
+
+					var filename = r.message;
+
+					if (confirm('Möchten Sie dieses Foto drucken?')) {
+						$.post('cheese.php?action=hardcopy', { filename : filename});
+					}
 				},
 				error : function(jqXHR, textStatus) {
 					console.error('Ajax request failed: ' + text.status);
@@ -301,6 +338,35 @@ $(document).ready(function() {
 			video.classList.remove('is-mirrored');
 		}
 	}
+
+	function onSettingsButtonClicked() {
+		document.body.classList.toggle('settings-active');
+	}
+
+	function onSettingsResetButtonClicked() {
+		$('#controls input').each (function(i, el) {
+			var $el = $(el);
+
+			var type = $el.attr('type');
+			var defaultValue = parseInt($el.attr('data-default'));
+
+			console.log(type + ' ' + defaultValue);
+
+			switch (type) {
+				case 'checkbox':
+					$el.prop('checked', defaultValue);
+					$el.trigger('change')
+					break;
+				case 'range':
+				default:
+					$el.val(defaultValue);
+					$el.trigger('input');
+					break;
+			}
+
+		});
+	}
+
 
 	function setFlashMessage(mssg, type) {
 

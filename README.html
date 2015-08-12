@@ -1,0 +1,6 @@
+<p>cheese</p>
+<p>Start streaming server:</p>
+<pre><code>$ node js/streaming-server cheese
+</code></pre><p>Start ffmpeg streaming from webcam to server</p>
+<pre><code>$ ffmpeg -s 1920x1080 -f video4linux2 -i /dev/video0 -f mpeg1video -b 800k -r 30 http://localhost:8082/cheese/1920/1080
+</code></pre>

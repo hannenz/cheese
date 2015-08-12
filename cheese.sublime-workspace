@@ -265,6 +265,7 @@
 	},
 	"file_history":
 	[
+		"//tmp/google_web_designer_temp_files/899141772_1438956840521942/pre/Expanding_Multi_Video_160x600_300x600_v1_0.html",
 		"/var/www/html/cheese/css/main.css",
 		"/var/www/html/cheese/js/assets/owl.carousel.css",
 		"/home/hannenz/jsmpeg/stream-example.html",
@@ -391,8 +392,7 @@
 		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/ts/constants.ts",
 		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/partials/_typography.scss",
 		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/main.scss",
-		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/_colors.scss",
-		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/_settings.scss"
+		"/home/hannenz/smbtom/htdocs/thera-trainer/fileadmin/rd2015/sass/_colors.scss"
 	],
 	"find":
 	{
@@ -417,6 +417,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"videoWidth",
+			"$pre",
+			"draw",
+			"webkitG",
+			"takePicture",
+			"onChee",
+			"1",
+			"infinite",
+			"r\"",
+			"countdown",
+			"addLa",
+			"addLay",
 			"takeP",
 			"mediaStream",
 			"stop",
@@ -532,19 +544,7 @@
 			"accorde",
 			"fonts/",
 			"fonts",
-			"languag",
-			"teaser",
-			"green",
-			"quick-access",
-			"quick",
-			".claim",
-			"include",
-			"header",
-			"favicon",
-			"viewport",
-			"titleTag",
-			".primary-nav, .secondary-nav",
-			"header"
+			"languag"
 		],
 		"highlight": true,
 		"in_selection": false,

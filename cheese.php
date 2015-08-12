@@ -88,9 +88,7 @@ class Cheese {
 				break;
 
 			case 'hardcopy':
-				echo "Printing a foto";
-				die();
-				$this->hardcopy();
+				$this->hardcopy($_POST['filename']);
 				break;
 
 			case 'cancel':
@@ -108,12 +106,28 @@ class Cheese {
 						$this->Response->setError('imagecreatefromstring() failed');
 					}
 					else {
-						if (!imagejpeg($im, __DIR__ . DIRECTORY_SEPARATOR . 'pictures' . DIRECTORY_SEPARATOR . uniqid() . '.jpg', 100)) {
+						$filename = __DIR__ . DIRECTORY_SEPARATOR . 'pictures' . DIRECTORY_SEPARATOR . uniqid() . '.jpg';
+						if (!imagejpeg($im, $filename, 100)) {
 							$this->Response->setError('imagejpeg() failed');
+						}
+						else {
+							$this->Response->setMessage($filename);
 						}
 					}
 					imagedestroy($im);
 				}
+				break;
+
+			case 'get_camera_option':
+				$attr = $_GET['attr'];
+				$val = shell_exec(sprintf('/usr/bin/v4l2-ctl --get-ctrl %s', $attr));
+				$this->Response->setMessage($val);
+				break;
+				
+			case 'set_camera_option':
+				$attr = $_GET['attr'];
+				$value = intval($_GET['val']);
+				shell_exec(sprintf('/usr/bin/v4l2-ctl --set-ctrl %s=%d', $attr, $value));
 				break;
 
 
@@ -130,6 +144,17 @@ class Cheese {
 		}
 
 		$this->Response->send();
+	}
+
+	public function hardcopy($filename) {
+		$cmd = sprintf("lpr %s", $filename);
+		exec($cmd, $out, $ret);
+		if ($ret != 0) {
+			$this->Response->setError($cmd . ' failed');
+		}
+		else {
+			$this->Response->setMessage($cmd . ' ok');
+		}
 	}
 }
 
