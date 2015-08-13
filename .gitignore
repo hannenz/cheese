@@ -1,5 +1,5 @@
 fotos/*
-.sublime-*
+*.sublime-*
 prepros.cfg
 pictures/*
 
