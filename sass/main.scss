@@ -6,8 +6,18 @@
 
 @import "partials/flash";
 
+$countdownSpeed:1;
+
+
 $previewWidth:1920px/2;
 $previewHeight:1080px/2;
+
+//$previewRatio: $previewHeight / $previewWidth;
+
+// Foto size is 6x4 at 270dpi --> 
+
+$fotoWidth:1620px;
+$fotoHeight:1080px;
 
 *, *::before, *::after {
 	box-sizing:border-box;
@@ -24,6 +34,9 @@ body {
 	line-height:1.4em;
 	// padding-top:3rem;
 	color:#505050;
+	width:100%;
+	height:100%;
+	padding-top:1em;
 }
 
 #js-overlay {
@@ -45,6 +58,13 @@ body {
 		left:50%;
 		transform: translate(-50%, -50%);
 		max-width:80%;
+	}
+
+	.button {
+		position:absolute;
+		bottom:5%;
+		left:50%;
+		z-index:3;
 	}
 }
 
@@ -105,6 +125,17 @@ h1 {
 	overflow:hidden;
 	position:relative;
 
+	// Crop marks;
+	&::before {
+		content:'';
+		position:absolute;
+		outline:1px dashed red;
+		width:$fotoWidth / 2;
+		height:$fotoHeight / 2;
+		left:(($previewWidth) - ($fotoWidth/2)) / 2;
+		top:0;
+		z-index:2;
+	}
 }
 
 /**
@@ -140,11 +171,12 @@ $opacity:0.6;
 	}
 	&.is-active {
 		display:block;
+
 		&::before {
-			@include animation(turnaround 0.5s linear 6, bg 1s step-end 3 forwards);
+			@include animation(turnaround 0.5s*$countdownSpeed linear 6, bg 1s step-end 3 forwards);
 		}
 		.numbers {
-			@include animation(numbers 3s steps(3, end) 1 forwards);
+			@include animation(numbers 3s*$countdownSpeed steps(3, end) 1 forwards);
 		}
 	}
 }
@@ -323,21 +355,23 @@ $opacity:0.6;
 }
 
 body {
-	overflow:hidden;
+//	overflow:hidden;
 	transition:all 300ms ease-out;
-	&.settings-active {
-		transform:translate(-250px, 0);
+	&.settings-active #controls{
+		transform:translate3d(-300px, 0, 0);
 	}
 }
 
 #controls {
-	position:absolute;
+	transition:all 300ms ease-out;
+	position:fixed;
 	left:100%;
 	top:0;
-	width:250px;
+	width:300px;
 	background-color:#404040;
-	height:100%;
-	padding:10px;
+//	height:100%;
+	padding:40px 40px 40px 40px;
+	overflow:hidden;
 
 	label {
 		color:#fff;

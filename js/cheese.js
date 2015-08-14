@@ -10,14 +10,18 @@ $(document).ready(function() {
 	var pictureWidth = 1920;
 	var pictureHeight = 1080;
 
+	// Size of the printed foto paper (6x4)
+	var fotoWidth = 1620;
+	var fotoHeight = 1080;
+
 	var video = document.getElementById('video');
 
 	var canvas = document.createElement('canvas');
-	canvas.setAttribute('width', pictureWidth);
-	canvas.setAttribute('height', pictureHeight);
+	canvas.setAttribute('width', fotoWidth);
+	canvas.setAttribute('height', fotoHeight);
 	canvas.style.display = 'none';
-	canvas.style.width = pictureWidth + 'px';
-	canvas.style.height = pictureHeight + 'px';
+	canvas.style.width = fotoWidth + 'px';
+	canvas.style.height = fotoHeight + 'px';
 	canvas.style.backgroundColor = 'gainsboro';
 	document.body.appendChild(canvas);
 
@@ -130,11 +134,19 @@ $(document).ready(function() {
 		var $img = $(this).clone();
 		$img.removeAttr('style');
 
+		var $printButton = $('<a href="#" class="button print-button">Print</a>');
+
 		$overlay
 			.empty()
 			.append($img)
+			.append($printButton)
 			.addClass('is-active')
 		;
+
+		$printButton.on('click', function() {
+			var filename = $img.attr('data-filename');
+			$.post('cheese.php?action=hardcopy', { filename : filename});
+		});
 	}
 
 	/**
@@ -168,7 +180,19 @@ $(document).ready(function() {
 			ctx.scale(-1, 1);
 		}
 
-		ctx.drawImage(video, 0, 0, pictureWidth, pictureHeight);
+		// Crop from camera size to foto size
+		ctx.fillStyle = 'rgb(255, 255, 255)';
+		ctx.fillRect(0, 0, 1620, 1080);
+
+		var offset = (pictureWidth - fotoWidth) / 2;
+		ctx.drawImage(video, 0, 0, pictureWidth, pictureHeight, offset, 0, pictureWidth, pictureHeight);
+
+		// If mirror mode is active, flip canvas back, so that next time it is unmirrored again..
+		if (video.classList.contains('is-mirrored')){
+			ctx.translate(pictureWidth, 0);
+			ctx.scale(-1, 1);
+		}
+
 
 		// Add layers for »fun«
 		//addLayers(ctx);
@@ -177,7 +201,6 @@ $(document).ready(function() {
 		var img = new Image();
 		var dataURL = canvas.toDataURL('image/png');
 		
-
 		// Send picture to server
 		$.ajax(
 			{
@@ -205,9 +228,7 @@ $(document).ready(function() {
 
 					var filename = r.message;
 
-					if (confirm('Möchten Sie dieses Foto drucken?')) {
-						$.post('cheese.php?action=hardcopy', { filename : filename});
-					}
+					$img.attr('data-filename', filename);
 				},
 				error : function(jqXHR, textStatus) {
 					console.error('Ajax request failed: ' + text.status);
